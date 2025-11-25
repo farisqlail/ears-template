@@ -18,8 +18,8 @@ export default function Navbar() {
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
           <nav className="hidden md:flex items-center gap-6 text-sm text-foreground">
-            <a href="#" className="hover:text-primary">Home</a>
-            <a href="#" className="hover:text-primary">About Us</a>
+            <a href="/" className="hover:text-primary">Home</a>
+            <a href="/about" className="hover:text-primary">About Us</a>
             <a href="#" className="hover:text-primary inline-flex items-center gap-1">Pages <ChevronDown className="h-4 w-4"/></a>
             <a href="#" className="hover:text-primary inline-flex items-center gap-1">Blog <ChevronDown className="h-4 w-4"/></a>
           </nav>
@@ -38,17 +38,17 @@ export default function Navbar() {
         {open ? (
           <div className="md:hidden mt-3 rounded-2xl bg-white border border-border shadow-card px-4 py-4 text-foreground">
             <div className="flex flex-col gap-3 text-sm">
-              <a href="#" className="hover:text-primary">Home</a>
-              <a href="#" className="hover:text-primary">About Us</a>
+              <a href="/" className="hover:text-primary">Home</a>
+              <a href="/about" className="hover:text-primary">About Us</a>
               <a href="#" className="hover:text-primary">Pages</a>
               <a href="#" className="hover:text-primary">Blog</a>
-              <a href="#" className="hover:text-primary">Contact</a>
-              <Button className="mt-2 rounded-full bg-teal-700 text-white hover:bg-teal-800 w-full inline-flex items-center gap-2 justify-center">
+              <a href="/contact" className="hover:text-primary">Contact</a>
+              <a href="/contact" className="mt-2 rounded-full bg-teal-700 text-white hover:bg-teal-800 w-full inline-flex items-center gap-2 justify-center">
                 <span>Contact Us</span>
                 <span className="inline-grid place-items-center h-6 w-6 rounded-full bg-white text-teal-700">
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
-              </Button>
+              </a>
             </div>
           </div>
         ) : null}

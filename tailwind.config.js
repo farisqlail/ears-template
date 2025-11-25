@@ -16,6 +16,7 @@ module.exports = {
         "primary-foreground": "rgb(var(--primary-foreground) / <alpha-value>)",
         secondary: "rgb(var(--secondary) / <alpha-value>)",
         accent: "rgb(var(--accent) / <alpha-value>)",
+        "primary-light": "rgb(var(--primary-light) / <alpha-value>)",
       },
       borderRadius: {
         lg: "12px",

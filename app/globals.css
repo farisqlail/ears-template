@@ -12,6 +12,7 @@
   --primary-foreground: 255 255 255;
   --secondary: 6 182 212; /* cyan-500 */
   --accent: 14 165 233; /* sky-500 */
+  --primary-light: 192 228 228; /* #C0E4E4 */
 }
 
 .dark {
@@ -24,6 +25,7 @@
   --primary-foreground: 255 255 255;
   --secondary: 6 182 212;
   --accent: 14 165 233;
+  --primary-light: 192 228 228;
 }
 
 @layer base {

@@ -13,7 +13,7 @@ export default function SectionHeading({ eyebrow, title, subtitle, align = "left
           <span>{eyebrow}</span>
         </div>
       ) : null}
-      <h2 className="mt-3 text-2xl md:text-3xl font-semibold">{title}</h2>
+      <h2 className="mt-3 text-3xl md:text-3xl font-semibold text-teal-700">{title}</h2>
       {subtitle ? <p className="mt-2 text-foreground/70 max-w-2xl mx-auto">{subtitle}</p> : null}
     </div>
   );
