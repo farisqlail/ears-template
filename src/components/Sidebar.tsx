@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "./ui/Button";
 
 export default function Sidebar() {
   return (
@@ -21,4 +21,3 @@ export default function Sidebar() {
     </aside>
   );
 }
-
