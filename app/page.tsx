@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import ExploreSection from "@/components/ExploreSection";
 import FacilitiesSection from "@/components/FacilitiesSection";
-import BlogSection from "@/components/BlogSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import FAQSection from "@/components/FAQSection";
 import EarPromoSection from "@/components/EarPromoSection";
@@ -19,7 +18,7 @@ export default function Page() {
 
         <FacilitiesSection />
 
-        <BlogSection />
+        {/* Blog moved to dedicated page /blog */}
 
         <TestimonialSection />
 

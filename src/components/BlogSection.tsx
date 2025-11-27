@@ -2,6 +2,7 @@
 import Image from "next/image";
 import blogImg from "../assets/images/blog.png";
 import { Newspaper } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
 type Post = {
   id: string;
@@ -50,35 +51,54 @@ const posts: Post[] = [
 ];
 
 export default function BlogSection() {
+  const featured = posts.slice(3, 5);
+  const latest = posts;
   return (
-    <section className="space-y-8">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div className="space-y-2">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-xs text-foreground/80">
-            Blog <Newspaper className="h-3.5 w-3.5" />
-          </span>
-          <h2 className="text-2xl font-semibold">Explore expert insights on hearing health.</h2>
-          <p className="text-foreground/70 max-w-2xl">
-            Stay informed with the latest tips, research, and advice from our professionals — helping you take better care of your
-            hearing every day.
-          </p>
+    <section className="space-y-12">
+      <div className="space-y-6">
+        <SectionHeading
+          eyebrow="Featured"
+          title="Featured Articles for Better Hearing Care"
+          subtitle="Stay ahead with highlighted articles from our experts — offering insights to help you protect, improve, and understand your hearing health."
+        />
+        <div className="grid gap-8 md:grid-cols-2">
+          {featured.map((p) => (
+            <article key={p.id} className="rounded-2xl border border-border bg-white shadow-card overflow-hidden">
+              <div className="relative w-full h-[220px] sm:h-[240px]">
+                <Image src={blogImg} alt="" fill className="object-cover" />
+              </div>
+              <div className="p-4 space-y-2">
+                <div className="text-sm text-foreground/60">{p.date}</div>
+                <h3 className="text-lg font-semibold">{p.title}</h3>
+                <p className="text-sm text-foreground/70">{p.excerpt}</p>
+              </div>
+            </article>
+          ))}
         </div>
-        <a href="#" className="rounded-full bg-teal-700 text-white px-4 py-2 hover:bg-teal-800 self-start md:self-auto">See all</a>
       </div>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {posts.map((p) => (
-          <article key={p.id} className="space-y-3">
-            <div className="relative w-full h-[220px] sm:h-[250px] rounded-2xl overflow-hidden mx-auto">
-              <Image src={blogImg} alt="" fill className="object-cover" />
-            </div>
-            <div className="space-y-1">
-              <div className="text-sm text-foreground/60">{p.date}</div>
-              <h3 className="text-lg font-semibold">{p.title}</h3>
-              <p className="text-sm text-foreground/70">{p.excerpt}</p>
-            </div>
-          </article>
-        ))}
+      <div className="border-t border-border" />
+
+      <div className="space-y-6">
+        <SectionHeading
+          eyebrow="Latest Post"
+          title="Explore expert insights on hearing health."
+          subtitle="Stay informed with the latest tips, research, and advice from our professionals — helping you take better care of your hearing every day."
+        />
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {latest.map((p) => (
+            <article key={p.id} className="space-y-3">
+              <div className="relative w-full h-[220px] sm:h-[250px] rounded-2xl overflow-hidden mx-auto">
+                <Image src={blogImg} alt="" fill className="object-cover" />
+              </div>
+              <div className="space-y-1">
+                <div className="text-sm text-foreground/60">{p.date}</div>
+                <h3 className="text-lg font-semibold">{p.title}</h3>
+                <p className="text-sm text-foreground/70">{p.excerpt}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

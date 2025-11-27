@@ -21,7 +21,7 @@ export default function Navbar() {
             <a href="/" className="hover:text-primary">Home</a>
             <a href="/about" className="hover:text-primary">About Us</a>
             <a href="#" className="hover:text-primary inline-flex items-center gap-1">Pages <ChevronDown className="h-4 w-4"/></a>
-            <a href="#" className="hover:text-primary inline-flex items-center gap-1">Blog <ChevronDown className="h-4 w-4"/></a>
+            <a href="/blog" className="hover:text-primary">Blog</a>
           </nav>
           <div className="absolute left-1/2 -translate-x-1/2">
             <span className="font-semibold tracking-wide text-teal-700">EARS</span>
@@ -41,7 +41,7 @@ export default function Navbar() {
               <a href="/" className="hover:text-primary">Home</a>
               <a href="/about" className="hover:text-primary">About Us</a>
               <a href="#" className="hover:text-primary">Pages</a>
-              <a href="#" className="hover:text-primary">Blog</a>
+              <a href="/blog" className="hover:text-primary">Blog</a>
               <a href="/contact" className="hover:text-primary">Contact</a>
               <a href="/contact" className="mt-2 rounded-full bg-teal-700 text-white hover:bg-teal-800 w-full inline-flex items-center gap-2 justify-center">
                 <span>Contact Us</span>
