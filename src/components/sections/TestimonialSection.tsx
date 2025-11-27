@@ -4,25 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import TestimonialImage from "@/assets/images/testimonial-1.png";
 import bgTestimonial from "@/assets/images/bg-testimonial.png";
 import { MessageSquareQuote } from "lucide-react";
+import { useTestimonials } from "@/context/TestimonialContext";
 
 export default function TestimonialSection() {
-  const testimonials = [
-    {
-      quote:
-        "From the very first visit, I felt at ease. They explained everything clearly and treated me with genuine kindness.",
-      author: "John Doe",
-    },
-    {
-      quote:
-        "Professional, caring, and thorough. I can finally enjoy conversations again without asking people to repeat themselves.",
-      author: "Jane Smith",
-    },
-    {
-      quote:
-        "The fitting process was effortless and personalized. My devices feel natural and sound amazing.",
-      author: "Mark Johnson",
-    },
-  ];
+  const { testimonials } = useTestimonials();
   const [index, setIndex] = useState(0);
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);

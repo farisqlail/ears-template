@@ -40,7 +40,6 @@ export default function ExploreSection() {
               <CardItem label="Hearing Test" text="Accurate assessments for your unique hearing profile" img={service1} />
               <CardItem label="Hearing Aid Fitting" text="Personalised fitting for comfort and clarity" img={service2} />
               <CardItem label="Tinnitus Care" text="Guidance and support tailored to your needs" img={service3} />
-        
             </div>
           </div>
           <div className="pointer-events-none absolute right-0 top-0 h-full w-12 sm:w-20 bg-gradient-to-l from-white to-white/0" />
@@ -54,7 +53,7 @@ import type { StaticImageData } from "next/image";
 
 function CardItem({ label, text, img }: { label: string; text: string; img: StaticImageData }) {
   return (
-    <div className="relative w-[320px] h-[200px] rounded-2xl overflow-hidden shadow-card snap-start shrink-0">
+    <div className="relative w[320px] h-[200px] rounded-2xl overflow-hidden shadow-card snap-start shrink-0">
       <Image src={img} alt="" fill className="object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
       <div className="absolute top-3 left-3 inline-flex items-center rounded-full bg-white/85 px-3 py-1 text-xs text-foreground">

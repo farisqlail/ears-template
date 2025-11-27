@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Button from "./Button";
+import Button from "./ui/Button";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 
 export default function Navbar() {

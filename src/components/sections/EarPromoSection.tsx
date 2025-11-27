@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import earImg from "../assets/images/ear.png";
+import earImg from "@/assets/images/ear.png";
 import { Instagram, Facebook, X, ChevronRight } from "lucide-react";
 
 export default function EarPromoSection() {

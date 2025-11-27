@@ -1,58 +1,14 @@
 "use client";
 import Image from "next/image";
-import blogImg from "../assets/images/blog.png";
-import { Newspaper } from "lucide-react";
-import SectionHeading from "./SectionHeading";
-
-type Post = {
-  id: string;
-  title: string;
-  excerpt: string;
-  date: string;
-};
-
-const posts: Post[] = [
-  {
-    id: "p1",
-    title: "Balance Disorders: When to Seek Help",
-    excerpt: "Understand how your ears affect your balance and when to take action.",
-    date: "December 12, 2023",
-  },
-  {
-    id: "p2",
-    title: "Managing Tinnitus: Tips That Can Help",
-    excerpt: "Find out what causes ringing in the ears and explore ways to reduce its impact.",
-    date: "December 12, 2023",
-  },
-  {
-    id: "p3",
-    title: "Protecting Your Hearing in a Noisy World",
-    excerpt: "From concerts to construction — learn practical ways to protect your ears daily.",
-    date: "December 12, 2023",
-  },
-  {
-    id: "p4",
-    title: "How to Recognize Early Signs of Hearing Loss",
-    excerpt: "Learn the common symptoms and when it’s time to get a professional assessment.",
-    date: "December 12, 2023",
-  },
-  {
-    id: "p5",
-    title: "Choosing the Right Hearing Aid for Your Lifestyle",
-    excerpt: "Discover the different types of hearing aids and which one best suits your daily needs.",
-    date: "December 12, 2023",
-  },
-  {
-    id: "p6",
-    title: "Is Earwax Harmful? What You Need to Know",
-    excerpt: "Uncover the myths and facts about earwax, and when to consider professional removal.",
-    date: "December 12, 2023",
-  },
-];
+import blogImg from "../../assets/images/blog.png";
+import SectionHeading from "../ui/SectionHeading";
+import { useBlogPosts } from "@/context/BlogPostsContext";
 
 export default function BlogSection() {
-  const featured = posts.slice(3, 5);
-  const latest = posts;
+  const { posts, body } = useBlogPosts();
+  const list = posts.map((p) => ({ id: p.id, title: p.title, date: p.date, excerpt: p.body[0] }));
+  const featured = list.slice(3, 5);
+  const latest = list;
   return (
     <section className="space-y-12">
       <div className="space-y-6">

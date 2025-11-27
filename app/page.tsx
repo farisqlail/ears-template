@@ -1,11 +1,11 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import Hero from "@/components/sections/Hero";
 import Footer from "@/components/Footer";
-import ExploreSection from "@/components/ExploreSection";
-import FacilitiesSection from "@/components/FacilitiesSection";
-import TestimonialSection from "@/components/TestimonialSection";
-import FAQSection from "@/components/FAQSection";
-import EarPromoSection from "@/components/EarPromoSection";
+import ExploreSection from "@/components/sections/ExploreSection";
+import FacilitiesSection from "@/components/sections/FacilitiesSection";
+import TestimonialSection from "@/components/sections/TestimonialSection";
+import FAQSection from "@/components/sections/FAQSection";
+import EarPromoSection from "@/components/sections/EarPromoSection";
 
 export default function Page() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import Button from "./Button";
-import Modal from "./Modal";
+import Button from "./ui/Button";
+import Modal from "./ui/Modal";
 
 export default function ModalDemo() {
   const [open, setOpen] = useState(false);
@@ -14,4 +14,3 @@ export default function ModalDemo() {
     </div>
   );
 }
-
