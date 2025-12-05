@@ -2,14 +2,23 @@
 import { useState } from "react";
 import { HelpCircle, Plus, Minus } from "lucide-react";
 import { useFAQ } from "@/context/FAQContext";
+import { useInView } from "@/hooks/useInView";
+import clsx from "clsx";
 
 export default function FAQSection() {
   const { faqs } = useFAQ();
   const [open, setOpen] = useState<number | null>(0);
+  const { ref, isInView } = useInView();
 
   return (
-    <section className="space-y-8">
-      <div className="space-y-3">
+    <section ref={ref} className="space-y-8">
+      <div 
+        className={clsx(
+          "space-y-3",
+          "transition-all duration-700 ease-out",
+          isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}
+      >
         <span className="inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-xs text-foreground/80">
           Quick & Clear Answers <HelpCircle className="h-3.5 w-3.5" />
         </span>
@@ -22,7 +31,15 @@ export default function FAQSection() {
         {faqs.map((item, i) => {
           const isOpen = open === i;
           return (
-            <div key={i} className="rounded-2xl border border-neutral-200 bg-neutral-50">
+            <div 
+              key={i} 
+              className={clsx(
+                "rounded-2xl border border-neutral-200 bg-neutral-50",
+                "transition-all duration-700 ease-out",
+                isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ transitionDelay: `${200 + i * 100}ms` }}
+            >
               <button
                 type="button"
                 aria-expanded={isOpen}

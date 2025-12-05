@@ -1,13 +1,26 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "../ui/Button";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import clsx from "clsx";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
     <header className="fixed top-4 md:top-8 z-50 w-full">
-      <div className="mx-4 sm:mx-6 md:mx-auto max-w-[360px] sm:max-w-[480px] md:max-w-5xl lg:max-w-6xl xl:max-w-7xl">
+      <div 
+        className={clsx(
+          "mx-4 sm:mx-6 md:mx-auto max-w-[360px] sm:max-w-[480px] md:max-w-5xl lg:max-w-6xl xl:max-w-7xl",
+          "transition-all duration-1000 ease-out",
+          isLoaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+        )}
+      >
         <div className="h-14 md:h-16 rounded-full bg-white border border-border shadow-card px-3 sm:px-4 md:px-6 flex items-center justify-between">
           <button
             type="button"

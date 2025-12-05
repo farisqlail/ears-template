@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+import clsx from "clsx";
 import heroImg from "@/assets/images/hero.png";
 import { ArrowUpRight, Instagram, Facebook, X } from "lucide-react";
 import ava1 from "@/assets/images/ava-1.png";
@@ -7,28 +9,58 @@ import ava2 from "@/assets/images/ava-2.png";
 import ava3 from "@/assets/images/ava-3.png";
 
 export default function Hero() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
     <section className="relative px-3 sm:px-6 py-5">
       <div className="relative h-[520px] sm:h-[560px] md:h-[640px] w-full rounded-3xl overflow-hidden">
         <Image src={heroImg} alt="Clinic" fill priority className="object-cover" />
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 sm:px-6">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-semibold drop-shadow">Rediscover the Joy of Sound</h1>
-          <p className="mt-3 max-w-2xl text-white/90">
+          <h1
+            className={clsx(
+              "text-2xl sm:text-3xl md:text-5xl font-semibold drop-shadow transition-all duration-1000 ease-out",
+              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}
+          >
+            Rediscover the Joy of Sound
+          </h1>
+          <p
+            className={clsx(
+              "mt-3 max-w-2xl text-white/90 transition-all duration-1000 delay-200 ease-out",
+              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}
+          >
             We provide personalized and professional hearing care, combining the latest technology with a
             human‑centered approach to enhance your quality of life.
           </p>
-          <a
-            href="#"
-            className="mt-6 inline-flex items-center gap-3 rounded-full bg-white px-5 md:px-4 py-2 md:py-2 text-teal-700 shadow-lg hover:bg-white/90"
+          <div
+            className={clsx(
+              "transition-all duration-1000 delay-500 ease-out",
+              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            )}
           >
-            <span className="font-semibold">Book Appointment</span>
-            <span className="grid h-12 w-12 place-items-center rounded-full bg-teal-600 text-white">
-              <ArrowUpRight className="h-4 w-4" />
-            </span>
-          </a>
+            <a
+              href="#"
+              className="mt-6 inline-flex items-center gap-3 rounded-full bg-white px-5 md:px-4 py-2 md:py-2 text-teal-700 shadow-lg hover:bg-white/90"
+            >
+              <span className="font-semibold">Book Appointment</span>
+              <span className="grid h-12 w-12 place-items-center rounded-full bg-teal-600 text-white">
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
+            </a>
+          </div>
         </div>
-        <div className="absolute left-4 sm:left-6 bottom-4 sm:bottom-6 max-w-[90%] sm:max-w-sm text-white">
+        <div
+          className={clsx(
+            "absolute left-4 sm:left-6 bottom-4 sm:bottom-6 max-w-[90%] sm:max-w-sm text-white transition-all duration-1000 delay-700 ease-out",
+            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          )}
+        >
           <div className="relative inline-flex items-center gap-0 -space-x-3 sm:-space-x-4 rounded-full bg-white/30 px-3 py-2 backdrop-blur-sm">
             <div className="relative z-10 h-8 w-8 sm:h-10 sm:w-10 rounded-full overflow-hidden ring-2 ring-teal-200">
               <Image src={ava1} alt="" fill className="object-cover" />
@@ -45,11 +77,23 @@ export default function Hero() {
             environment where your comfort and well‑being come first.
           </p>
         </div>
-        <div className="absolute right-4 sm:right-6 bottom-4 sm:bottom-6 hidden sm:flex flex-col items-end gap-3">
-          <a className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 text-sm text-teal-700 hover:bg-white" href="#">
+        <div
+          className={clsx(
+            "absolute right-4 sm:right-6 bottom-4 sm:bottom-6 hidden sm:flex flex-col items-end gap-3",
+            "transition-all duration-700 delay-1000 ease-out",
+            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          )}
+        >
+          <a
+            className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 text-sm text-teal-700 hover:bg-white"
+            href="#"
+          >
             <Instagram className="h-4 w-4" /> Instagram
           </a>
-          <a className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 text-sm text-teal-700 hover:bg-white" href="#">
+          <a
+            className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 text-sm text-teal-700 hover:bg-white"
+            href="#"
+          >
             <Facebook className="h-4 w-4" /> Facebook
           </a>
           <div className="inline-flex items-center gap-2 rounded-full bg-white/80 px-3 py-2 text-sm text-teal-700">

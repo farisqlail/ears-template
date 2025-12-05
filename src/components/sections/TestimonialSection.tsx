@@ -5,12 +5,15 @@ import TestimonialImage from "@/assets/images/testimonial-1.png";
 import bgTestimonial from "@/assets/images/bg-testimonial.png";
 import { MessageSquareQuote } from "lucide-react";
 import { useTestimonials } from "@/context/TestimonialContext";
+import { useInView } from "@/hooks/useInView";
+import clsx from "clsx";
 
 export default function TestimonialSection() {
   const { testimonials } = useTestimonials();
   const [index, setIndex] = useState(0);
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const { ref, isInView } = useInView();
 
   useEffect(() => {
     const to = setInterval(() => {
@@ -28,11 +31,17 @@ export default function TestimonialSection() {
   }, [index]);
 
   return (
-    <section className="relative min-h-[420px] md:min-h-[520px] py-20 md:py-32">
+    <section ref={ref} className="relative min-h-[420px] md:min-h-[520px] py-20 md:py-32">
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <Image src={bgTestimonial} alt="" fill className="object-contain object-center" />
       </div>
-      <div className="relative mx-auto max-w-6xl text-center space-y-6 px-4 sm:px-6">
+      <div 
+        className={clsx(
+          "relative mx-auto max-w-6xl text-center space-y-6 px-4 sm:px-6",
+          "transition-all duration-700 ease-out",
+          isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        )}
+      >
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/80 px-4 py-2 text-xs">
           <span>Testimonial</span>
           <MessageSquareQuote className="h-3.5 w-3.5" />

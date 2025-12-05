@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import { HelpCircle, Share2 } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
+import clsx from "clsx";
 
 const topics = [
   "Hearing Consultation",
@@ -15,9 +17,10 @@ export default function Footer() {
   const [selected, setSelected] = useState<string[]>([topics[0]]);
   const toggle = (t: string) =>
     setSelected((s) => (s.includes(t) ? s.filter((x) => x !== t) : [...s, t]));
+  const { ref, isInView } = useInView();
 
   return (
-    <footer className="mt-20">
+    <footer ref={ref} className="mt-20">
       <div className="relative overflow-hidden">
         <div
           className="absolute inset-0"
@@ -28,7 +31,13 @@ export default function Footer() {
         />
         <div className="absolute top-1/2 bottom-0 left-1/2 -translate-x-1/2 w-px bg-white/20" />
         <div className="relative grid md:grid-cols-2 gap-12 px-6 md:px-[120px] py-16 text-white">
-          <div className="space-y-6">
+          <div 
+            className={clsx(
+              "space-y-6",
+              "transition-all duration-700 ease-out",
+              isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <h2 className="text-3xl font-semibold leading-tight">
               Let’s Talk About Your Hearing
               <br />
@@ -59,7 +68,13 @@ export default function Footer() {
               </div>
           </div>
 
-          <div className="space-y-6">
+          <div 
+            className={clsx(
+              "space-y-6",
+              "transition-all duration-700 delay-200 ease-out",
+              isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            )}
+          >
             <div className="space-y-3">
               <div className="text-sm text-white/80">I need help with:</div>
               <div className="flex flex-wrap gap-3 no-scrollbar overflow-x-auto pr-2">
