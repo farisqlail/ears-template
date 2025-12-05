@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import { useInView } from "@/hooks/useInView";
