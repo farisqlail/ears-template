@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Button from "./ui/Button";
+import Button from "../ui/Button";
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -43,7 +43,7 @@ export default function Navbar() {
               <a href="#" className="hover:text-primary">Pages</a>
               <a href="/blog" className="hover:text-primary">Blog</a>
               <a href="/contact" className="hover:text-primary">Contact</a>
-              <a href="/contact" className="mt-2 rounded-full bg-teal-700 text-white hover:bg-teal-800 w-full inline-flex items-center gap-2 justify-center">
+              <a href="/contact" className="mt-2 rounded-full bg-teal-700 text-white hover:bg-teal-800 w-full inline-flex items-center gap-2 justify-center py-3">
                 <span>Contact Us</span>
                 <span className="inline-grid place-items-center h-6 w-6 rounded-full bg-white text-teal-700">
                   <ArrowUpRight className="h-4 w-4" />

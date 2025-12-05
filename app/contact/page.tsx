@@ -1,7 +1,7 @@
-import PageHeader from "@/components/PageHeader";
+import PageHeader from "@/components/layout/PageHeader";
 import ContactSection from "@/components/sections/ContactSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
-import PageLayout from "@/components/PageLayout";
+import PageLayout from "@/components/layout/PageLayout";
 
 export default function ContactPage() {
   return (

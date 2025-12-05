@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Footer from "@/components/Footer";
+import Footer from "./Footer";
 import EarPromoSection from "@/components/sections/EarPromoSection";
 
 type Props = {

@@ -34,12 +34,27 @@ export default function ExploreSection() {
           </a>
         </div>
 
-        <div className="relative ml-4 mr-6 sm:mx-6 md:mx-0 w-full max-w-[305px] sm:max-w-full md:w-[720px] xl:w-[800px]">
-          <div className="no-scrollbar overflow-x-auto snap-x snap-mandatory">
-            <div className="min-w-max flex items-center gap-4 sm:gap-6 pr-12 sm:pr-24">
-              <CardItem label="Hearing Test" text="Accurate assessments for your unique hearing profile" img={service1} />
-              <CardItem label="Hearing Aid Fitting" text="Personalised fitting for comfort and clarity" img={service2} />
-              <CardItem label="Tinnitus Care" text="Guidance and support tailored to your needs" img={service3} />
+        <div className="relative w-full min-w-0">
+          <div className="no-scrollbar overflow-x-auto w-full snap-x snap-mandatory py-4 scroll-smooth">
+            <div className="flex flex-nowrap items-center gap-4 sm:gap-6 pr-4">
+              <CardItem 
+                label="Hearing Test" 
+                text="Accurate assessments for your unique hearing profile" 
+                img={service1} 
+                onClick={(e) => e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })}
+              />
+              <CardItem 
+                label="Hearing Aid Fitting" 
+                text="Personalised fitting for comfort and clarity" 
+                img={service2} 
+                onClick={(e) => e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })}
+              />
+              <CardItem 
+                label="Tinnitus Care" 
+                text="Guidance and support tailored to your needs" 
+                img={service3} 
+                onClick={(e) => e.currentTarget.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })}
+              />
             </div>
           </div>
           <div className="pointer-events-none absolute right-0 top-0 h-full w-12 sm:w-20 bg-gradient-to-l from-white to-white/0" />
@@ -51,10 +66,13 @@ export default function ExploreSection() {
 
 import type { StaticImageData } from "next/image";
 
-function CardItem({ label, text, img }: { label: string; text: string; img: StaticImageData }) {
+function CardItem({ label, text, img, onClick }: { label: string; text: string; img: StaticImageData; onClick?: (e: React.MouseEvent<HTMLDivElement>) => void }) {
   return (
-    <div className="relative w[320px] h-[200px] rounded-2xl overflow-hidden shadow-card snap-start shrink-0">
-      <Image src={img} alt="" fill className="object-cover" />
+    <div 
+      onClick={onClick}
+      className="relative w-[320px] h-[200px] rounded-2xl overflow-hidden shadow-card snap-center shrink-0 cursor-pointer select-none group transition-transform active:scale-95"
+    >
+      <Image src={img} alt="" fill className="object-cover transition-transform group-hover:scale-105" draggable={false} />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
       <div className="absolute top-3 left-3 inline-flex items-center rounded-full bg-white/85 px-3 py-1 text-xs text-foreground">
         {label}

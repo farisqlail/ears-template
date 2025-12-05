@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
-import Breadcrumbs from "./Breadcrumbs";
-import SectionHeading from "./ui/SectionHeading";
+import Breadcrumbs from "../ui/Breadcrumbs";
+import SectionHeading from "../ui/SectionHeading";
 
 type Crumb = { label: string; href?: string };
 

@@ -1,6 +1,6 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
-import Footer from "@/components/Footer";
+import Footer from "@/components/layout/Footer";
 import ExploreSection from "@/components/sections/ExploreSection";
 import FacilitiesSection from "@/components/sections/FacilitiesSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
@@ -17,8 +17,6 @@ export default function Page() {
         <ExploreSection />
 
         <FacilitiesSection />
-
-        {/* Blog moved to dedicated page /blog */}
 
         <TestimonialSection />
 

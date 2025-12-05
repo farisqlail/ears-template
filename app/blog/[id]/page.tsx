@@ -1,13 +1,13 @@
 "use client";
-import PageHeader from "@/components/PageHeader";
+import PageHeader from "@/components/layout/PageHeader";
 import Image from "next/image";
 import blogImg from "@/assets/images/blog.png";
 import { Instagram, Facebook, X } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { UnderlineInput, UnderlineTextarea } from "@/components/ui/UnderlineInput";
-import RelatedPostCard from "@/components/RelatedPostCard";
+import RelatedPostCard from "@/components/cards/RelatedPostCard";
 import { useBlogPosts } from "@/context/BlogPostsContext";
-import PageLayout from "@/components/PageLayout";
+import PageLayout from "@/components/layout/PageLayout";
 
 export default function BlogDetailPage({ params }: { params: { id: string } }) {
   const { posts, body } = useBlogPosts();

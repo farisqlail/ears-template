@@ -1,13 +1,13 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/layout/Navbar";
 import TestimonialSection from "@/components/sections/TestimonialSection";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Image from "next/image";
 import AboutIntroSection from "@/components/sections/AboutIntroSection";
 import heroImg from "@/assets/images/service-1.png";
 import missionImg from "@/assets/images/service-2.png";
 import teamImg from "@/assets/images/service-3.png";
-import PageLayout from "@/components/PageLayout";
+import PageLayout from "@/components/layout/PageLayout";
 
 export default function AboutPage() {
   return (

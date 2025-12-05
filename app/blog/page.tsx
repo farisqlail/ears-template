@@ -1,11 +1,11 @@
 "use client";
-import PageHeader from "@/components/PageHeader";
+import PageHeader from "@/components/layout/PageHeader";
 import blogImg from "@/assets/images/blog.png";
 import SectionHeading from "@/components/ui/SectionHeading";
-import RelatedPostCard from "@/components/RelatedPostCard";
-import FeaturedPostCard from "@/components/FeaturedPostCard";
+import RelatedPostCard from "@/components/cards/RelatedPostCard";
+import FeaturedPostCard from "@/components/cards/FeaturedPostCard";
 import { useBlogPosts } from "@/context/BlogPostsContext";
-import PageLayout from "@/components/PageLayout";
+import PageLayout from "@/components/layout/PageLayout";
 
 type ListPost = { id: string; title: string; excerpt: string; date: string };
 
